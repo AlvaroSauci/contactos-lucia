@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contactos de Lucía</title>
+<style>
+  :root {
+    --ink: #21262b;
+    --paper: #f6f4ef;
+    --line: #d8d3c8;
+    --accent: #2f6f5e;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--paper);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  main {
+    width: 100%;
+    max-width: 420px;
+  }
+  h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 6px;
+  }
+  p.sub {
+    text-align: center;
+    color: #6b675d;
+    font-size: 0.95rem;
+    margin: 0 0 32px;
+  }
+  a.contact {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  a.contact:active {
+    transform: scale(0.98);
+    border-color: var(--accent);
+  }
+  .icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .info {
+    flex: 1;
+  }
+  .role {
+    font-size: 0.85rem;
+    color: #6b675d;
+    margin-bottom: 2px;
+  }
+  .name-line {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .call-label {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <main>
+    <h1>Contactos de Lucía</h1>
+    <p class="sub">Toca un número para llamar</p>
+
+    <a class="contact" href="tel:+34645219736">
+      <div class="icon">&#128222;</div>
+      <div class="info">
+        <div class="role">Padre de Lucía</div>
+        <div class="name-line">Álvaro</div>
+      </div>
+      <div class="call-label">Llamar</div>
+    </a>
+
+    <a class="contact" href="tel:+34691098437">
+      <div class="icon">&#128222;</div>
+      <div class="info">
+        <div class="role">Madre de Lucía</div>
+        <div class="name-line">Gema</div>
+      </div>
+      <div class="call-label">Llamar</div>
+    </a>
+  </main>
+</body>
+</html>
