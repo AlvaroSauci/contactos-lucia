@@ -6,15 +6,20 @@
 <title>Contactos de Lucía</title>
 <style>
   :root {
-    --ink: #21262b;
-    --paper: #f6f4ef;
-    --line: #d8d3c8;
-    --accent: #2f6f5e;
+    --paper: #fbf6ee;
+    --card: #ffffff;
+    --ink: #2b2620;
+    --muted: #857c6e;
+    --line: #e7ddc9;
+    --dad: #3c6e8f;
+    --dad-soft: #e4eef3;
+    --mom: #b5583f;
+    --mom-soft: #f7e6df;
   }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body {
     margin: 0;
-    height: 100%;
+    min-height: 100%;
     background: var(--paper);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: var(--ink);
@@ -23,94 +28,184 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 28px 20px;
   }
   main {
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
+  }
+  .heart {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 16px;
+    display: block;
+  }
+  .badge {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--mom);
+    font-weight: 600;
+    margin: 0 0 6px;
   }
   h1 {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
     text-align: center;
-    margin: 0 0 6px;
+    margin: 0 0 10px;
+    letter-spacing: 0.2px;
   }
   p.sub {
     text-align: center;
-    color: #6b675d;
-    font-size: 0.95rem;
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1.55;
     margin: 0 0 32px;
+    padding: 0 8px;
   }
   a.contact {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 16px;
-    background: #fff;
+    background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 16px;
+    border-radius: 18px;
+    padding: 22px 20px;
+    margin-bottom: 14px;
     text-decoration: none;
     color: var(--ink);
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    overflow: hidden;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 0 1px 3px rgba(43, 38, 32, 0.06);
   }
+  a.contact::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+  }
+  a.contact.dad::before { background: var(--dad); }
+  a.contact.mom::before { background: var(--mom); }
   a.contact:active {
-    transform: scale(0.98);
-    border-color: var(--accent);
+    transform: scale(0.97);
+    box-shadow: 0 1px 2px rgba(43, 38, 32, 0.02);
   }
   .icon {
     flex-shrink: 0;
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
   }
-  .info {
-    flex: 1;
-  }
+  .icon.dad { background: var(--dad-soft); }
+  .icon.mom { background: var(--mom-soft); }
+  .icon svg { width: 24px; height: 24px; }
+  .icon.dad svg { stroke: var(--dad); }
+  .icon.mom svg { stroke: var(--mom); }
+  .info { flex: 1; min-width: 0; }
   .role {
-    font-size: 0.85rem;
-    color: #6b675d;
-    margin-bottom: 2px;
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 3px;
   }
   .name-line {
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     font-weight: 600;
   }
-  .call-label {
-    font-size: 0.85rem;
-    color: var(--accent);
-    font-weight: 600;
+  .go svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--muted);
+    flex-shrink: 0;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 28px;
+    line-height: 1.5;
   }
 </style>
 </head>
 <body>
   <main>
-    <h1>Contactos de Lucía</h1>
-    <p class="sub">Toca un número para llamar</p>
+    <svg class="heart" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 33C20 33 6 24.5 6 15.5C6 10.8 9.7 7 14.3 7C16.7 7 18.9 8.1 20 10C21.1 8.1 23.3 7 25.7 7C30.3 7 34 10.8 34 15.5C34 24.5 20 33 20 33Z" stroke="#b5583f" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+    <p class="badge" id="edad">Soy Lucía</p>
+    <h1>Alguien me espera en casa</h1>
+    <p class="sub">Si me has encontrado a mí, o solo mis cosas, mis padres estarán preocupados. Avísales, por favor</p>
 
-    <a class="contact" href="tel:+34645219736">
-      <div class="icon">&#128222;</div>
+    <a class="contact dad" href="tel:+34645219736">
+      <div class="icon dad">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4c0 1-1 2-2 2C10.5 21 3 13.5 3 6c0-1 1-2 1-2Z"/>
+        </svg>
+      </div>
       <div class="info">
         <div class="role">Padre de Lucía</div>
         <div class="name-line">Álvaro</div>
       </div>
-      <div class="call-label">Llamar</div>
+      <div class="go">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 6l6 6-6 6"/>
+        </svg>
+      </div>
     </a>
 
-    <a class="contact" href="tel:+34691098437">
-      <div class="icon">&#128222;</div>
+    <a class="contact mom" href="tel:+34691098437">
+      <div class="icon mom">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4c0 1-1 2-2 2C10.5 21 3 13.5 3 6c0-1 1-2 1-2Z"/>
+        </svg>
+      </div>
       <div class="info">
         <div class="role">Madre de Lucía</div>
         <div class="name-line">Gema</div>
       </div>
-      <div class="call-label">Llamar</div>
+      <div class="go">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 6l6 6-6 6"/>
+        </svg>
+      </div>
     </a>
+
+    <footer>Gracias por ayudarme a volver con ellos</footer>
   </main>
+
+  <script>
+    (function () {
+      var nacimiento = new Date(2025, 5, 10); // 10/06/2025
+      var hoy = new Date();
+
+      var meses = (hoy.getFullYear() - nacimiento.getFullYear()) * 12 +
+                  (hoy.getMonth() - nacimiento.getMonth());
+      if (hoy.getDate() < nacimiento.getDate()) meses--;
+      if (meses < 0) meses = 0;
+
+      var anios = Math.floor(meses / 12);
+      var mesesRestantes = meses % 12;
+
+      function plural(n, singular, pluralForma) {
+        return n + ' ' + (n === 1 ? singular : pluralForma);
+      }
+
+      var texto;
+      if (anios === 0 && mesesRestantes === 0) {
+        texto = 'Soy Lucía, acabo de nacer';
+      } else if (anios === 0) {
+        texto = 'Soy Lucía, tengo ' + plural(mesesRestantes, 'mes', 'meses');
+      } else if (mesesRestantes === 0) {
+        texto = 'Soy Lucía, tengo ' + plural(anios, 'año', 'años');
+      } else {
+        texto = 'Soy Lucía, tengo ' + plural(anios, 'año', 'años') + ' y ' + plural(mesesRestantes, 'mes', 'meses');
+      }
+
+      document.getElementById('edad').textContent = texto;
+    })();
+  </script>
 </body>
 </html>
